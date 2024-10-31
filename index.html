@@ -15,6 +15,18 @@
         name: '哈谷',
         loadSidebar: false,
         coverpage: true,
+        plugins: [
+            (hook, vm) => {
+                // https://github.com/HerbertHe/docsify-beian
+                const footer = `
+                <hr>
+                <footer class="beian" style="text-align: center;">
+                    <a style="text-decoration: none; color: #34495e; font-size: 15px; font-weight: 400;" href="https://beian.miit.gov.cn/" target="_blank">陕ICP备2024052481号-1</a>
+                </footer>
+                `
+                hook.afterEach((html) => html + footer)
+            },
+        ],
     }
 </script>
 <script src="https://jsd.onmicrosoft.cn/npm/docsify@4.10.2/lib/docsify.min.js"></script>
